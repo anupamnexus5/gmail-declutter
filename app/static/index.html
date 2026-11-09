@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Clearpost · A little less inbox</title><link rel="stylesheet" href="/static/style.css"><script defer src="/static/app.js"></script></head>
+<body>
+<header><a class="brand" href="/"><span class="mark">c.</span>clearpost</a><span class="local">● Personal workspace</span></header>
+<main>
+<section class="intro"><div><p class="eyebrow">MAKE ROOM FOR WHAT MATTERS</p><h1>A little less inbox.<br>A little more clarity.</h1><p class="lead">See who’s filling your Promotions tab.<br>Start with a clear view of your subscriptions.</p><div class="actions"><a id="connect" class="button primary" href="/auth/google">Connect Gmail <span>↗</span></a><button id="demo" class="button secondary">Explore demo</button><button id="disconnect" class="button secondary" hidden>Disconnect locally</button></div><p class="footnote">Read-only discovery · Email bodies are never fetched</p></div><aside><span class="aside-icon">↘</span><p>Less noise.<br>More breathing room.</p><small>One subscription at a time.</small></aside></section>
+<div id="message" role="status" aria-live="polite"></div>
+<section id="setup" class="setup" hidden><h2>Connect your own Gmail</h2><p>Create a Google Cloud project, enable the Gmail API, and add your account as an OAuth test user. Create a <strong>Web application</strong> OAuth client with this redirect URI:</p><code>http://127.0.0.1:8765/auth/callback</code><p>Set <code>GOOGLE_CLIENT_ID</code> and <code>GOOGLE_CLIENT_SECRET</code> in your terminal, then restart the app. The project README has the full steps.</p></section>
+<section class="workspace"><div class="section-top"><div><p class="eyebrow">YOUR INBOX, AT A GLANCE</p><h2>Subscription overview <span id="mode">Not connected</span></h2></div><button id="scan" class="button primary" disabled>Scan promotions ↗</button></div>
+<div class="stats"><div><span>Promotional emails scanned</span><strong id="emails">—</strong></div><div><span>Mailing lists & senders</span><strong id="lists">—</strong></div><div><span>Advertise one-click support</span><strong id="supported">—</strong></div></div>
+<div class="table-head"><label for="search">Subscriptions</label><input id="search" type="search" placeholder="Filter sender or subject…"><span id="scope">Up to 100 emails · Last 90 days</span></div>
+<div class="table-scroll"><table><thead><tr><th>Sender / mailing list</th><th>Recent subject</th><th>Emails</th><th>Unsubscribe support</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p id="empty" class="empty">A quieter inbox starts with a closer look.<br><small>Connect Gmail or explore the sample subscriptions.</small></p>
+<div class="table-footer"><span id="count">No scan yet</span><span>Discovery preview · Unsubscribe actions are coming next</span></div>
+</section><footer>Built for a more intentional inbox.<span>Tokens stay in memory and clear when the server stops.</span></footer>
+</main></body></html>
